@@ -9,6 +9,8 @@ sudo sh -c 'echo "export PATH=\$PATH:/usr/local/go/bin" >> /etc/profile'
 source /etc/profile
 exit
 
+# $ which go
+
 # put in end of line .bashrc
 # export GOPATH=/home/ubuntu/go
 # export PATH=$PATH:$GOPATH/bin
@@ -47,8 +49,9 @@ sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
 sudo git clone https://github.com/kubernetes/dashboard.git
 
-sudo su
+# probably don't need sudo su here
 cd modules/web && yarn
 
 exit
 
+# for some reason it has a go.mod error when i use this script. Works when I go thorugh it line by line in the google doc
