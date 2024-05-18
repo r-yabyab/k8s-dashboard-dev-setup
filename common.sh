@@ -55,3 +55,7 @@ cd modules/web && yarn
 exit
 
 # for some reason it has a go.mod error when i use this script. Works when I go thorugh it line by line in the google doc
+
+# Need to run ./dev.serve.sh to correctly install angular deps
+# takes almost 5 minutes to build angular server
+# :8080/login
