@@ -70,3 +70,13 @@ kill -INT <processID> ????
 curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
 chmod 700 get_helm.sh
 ./get_helm.sh
+
+
+    #Image: "dashboard-scraper:latest" with ID "sha256:71bf11ea90e3f710bb7665b828bdc0bf6cbe2aca29c907f8d3288a1d7e67bbdb" not yet present on node "kubernetes-dashboard-control-plane", loading...
+    #Release "kubernetes-dashboard" does not exist. Installing it now.
+    #Error: Unable to continue with install: APIService "v1beta1.metrics.k8s.io" in namespace "" exists and cannot be imported into the current release: invalid ownership metadata; label validation error: missing key "app.kubernetes.io/managed-by": must be set to "Helm"; annotation validation error: missing key "meta.helm.sh/release-name": must be set to "kubernetes-dashboard"; annotation validation error: missing key "meta.helm.sh/release-namespace": must be set to "dashboard"
+    #make: *** [Makefile:138: helm] Error 1
+
+    #run 2
+    #333.2 ➤ YN0001: │ Error: While persisting /workspace/modules/web/.yarn/cache/material-design-icons-npm-3.0.1-3f3678dde1-9a6dd4b2a7.zip/node_modules/material-design-icons/ -> /workspace/modules/web/node_modules/material-design-icons ENOSPC: no space left on device, write
+      #/dev/root         29G   26G  2.5G  92% /
