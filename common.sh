@@ -1,3 +1,5 @@
+#!/bin/bash
+
 sudo apt-get update
 
 #Install go
@@ -39,7 +41,7 @@ echo \
 
 sudo apt-get update
 
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 
 sudo usermod -aG docker "$whoami"
 
@@ -57,5 +59,14 @@ exit
 # for some reason it has a go.mod error when i use this script. Works when I go thorugh it line by line in the google doc
 
 # Need to run ./dev.serve.sh to correctly install angular deps
+cd modules/web/hack/scripts/ && ./dev.serve.sh
+
+kill -INT <processID> ????
+
 # takes almost 5 minutes to build angular server
 # :8080/login
+
+#helm install
+curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+chmod 700 get_helm.sh
+./get_helm.sh
