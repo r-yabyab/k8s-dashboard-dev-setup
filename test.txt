@@ -1,3 +1,12 @@
 ubuntu 24.04
 40Gi volume
 t3.large
+
+change kubernetes-dashboard-kong-proxy svc from ClusterIP to NodePort then use worker node's ip and port
+use https:// then it gets redirected to http://
+
+
+configmap and ns found here:
+dashboard/modules/web/pkg/settings/manager.go
+
+dashboard/modules/web/pkg/args/args.go

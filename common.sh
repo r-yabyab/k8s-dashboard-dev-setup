@@ -17,6 +17,14 @@ exit
 # export GOPATH=/home/ubuntu/go
 # export PATH=$PATH:$GOPATH/bin
 # NOT THIS ONE export PATH=$PATH:/usr/local/go/bin
+##### not this either export GOPATH=/home/go maybe this
+## Maybe this: go env -w GOPATH=$HOME/go
+
+## perms
+# sudo chown -R root:root ./go
+## prob this in .bashrc ##TRYING THIS 16:14
+# export GOPATH=$HOME/go
+# export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
 #install nodejs and npm
 sudo su
@@ -51,6 +59,8 @@ sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
 sudo git clone https://github.com/kubernetes/dashboard.git
 
+sudo chown -R $USER:$USER /home/ubuntu/dashboard
+
 # probably don't need sudo su here
 cd modules/web && yarn
 
@@ -63,7 +73,8 @@ cd modules/web/hack/scripts/ && ./dev.serve.sh
 
 kill -INT <processID> ????
 
-# takes almost 5 minutes to build angular server
+# make serve
+# takes almost 5 minutes to build angular server then another 5 for the dashboard modules
 # :8080/login
 
 #helm install
