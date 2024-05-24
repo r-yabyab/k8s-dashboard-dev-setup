@@ -1,0 +1,17 @@
+-- generated when installing via helm
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  annotations:
+    meta.helm.sh/release-name: kubernetes-dashboard
+    meta.helm.sh/release-namespace: kubernetes-dashboard
+  creationTimestamp: "2024-05-24T05:58:04Z"
+  labels:
+    app.kubernetes.io/instance: kubernetes-dashboard
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: kubernetes-dashboard
+    helm.sh/chart: kubernetes-dashboard-7.4.0
+  name: kubernetes-dashboard-web-settings
+  namespace: kubernetes-dashboard
+  resourceVersion: "689"
+  uid: 94f9dd6a-34ad-469a-8ab2-08aaa61e1b1e
