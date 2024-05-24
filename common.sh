@@ -80,3 +80,7 @@ chmod 700 get_helm.sh
     #run 2
     #333.2 ➤ YN0001: │ Error: While persisting /workspace/modules/web/.yarn/cache/material-design-icons-npm-3.0.1-3f3678dde1-9a6dd4b2a7.zip/node_modules/material-design-icons/ -> /workspace/modules/web/node_modules/material-design-icons ENOSPC: no space left on device, write
       #/dev/root         29G   26G  2.5G  92% /
+
+
+make tools
+make helm
