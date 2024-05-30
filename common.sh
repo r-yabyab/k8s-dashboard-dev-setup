@@ -99,5 +99,4 @@ chmod 700 get_helm.sh
 
 
 make run
-
   # token works for https://:8443
