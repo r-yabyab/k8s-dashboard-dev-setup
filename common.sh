@@ -26,6 +26,11 @@ exit
 # export GOPATH=$HOME/go
 # export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
+# WORKS .bashrc
+# export GOROOT=/usr/local/go
+# export GOPATH=$HOME/go
+# export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+
 #install nodejs and npm
 sudo su
 curl -fsSL https://deb.nodesource.com/setup_22.x | bash - &&\
@@ -93,5 +98,6 @@ chmod 700 get_helm.sh
       #/dev/root         29G   26G  2.5G  92% /
 
 
-make tools
-make helm
+make run
+
+  # token works for https://:8443
