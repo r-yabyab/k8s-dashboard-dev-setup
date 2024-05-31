@@ -84,5 +84,4 @@ sudo chown -R $USER:$USER /home/ubuntu/dashboard
 cd dashboard
 sudo sh -c 'cd modules/web && yarn'
 
-cd /$HOME/dashboard/modules/web/hack/scripts
-./dev.serve.sh
+cd /$HOME/dashboard/modules/web/hack/scripts && ./dev.serve.sh
