@@ -1,10 +1,12 @@
 #!/bin/bash
 
-# chmod +x setup_go.sh
+# chmod +x script.sh
 
 set -euxo pipefail
 
 sudo apt-get update
+
+cd $HOME
 
 #Install go
 wget https://go.dev/dl/go1.22.3.linux-amd64.tar.gz
