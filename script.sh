@@ -70,3 +70,9 @@ sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 sudo git clone https://github.com/kubernetes/dashboard.git
 
 sudo chown -R $USER:$USER /home/ubuntu/dashboard
+
+cd dashboard
+sudo sh -c 'cd modules/web && yarn'
+
+cd /$HOME/dashboard/modules/web/hack/scripts
+./dev.serve.sh
