@@ -53,10 +53,10 @@ server {
                 #try_files $uri $uri/ =404;
                 #proxy_pass http://172.18.0.6:8080/;
                 proxy_pass http://localhost:8080/;
-                proxy_set_header Host $host;
-                proxy_set_header X-Real-IP $remote_addr;
-                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-                proxy_set_header Authorization "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IlctTmhjZjlRbXhaa245ZUhfaTBvMEJ4WVpJVkFGRkUyRXpDeHN3S0xzRHcifQ.eyJhdWQiOlsiaHR0cHM6Ly9rdWJlcm5ldGVzLmRlZmF1bHQuc3ZjLmNsdXN0ZXIubG9jYWwiXSwiZXhwIjoxNzE3MTI0MTQyLCJpYXQiOjE3MTcxMjA1NDIsImlzcyI6Imh0dHBzOi8va3ViZXJuZXRlcy5kZWZhdWx0LnN2Yy5jbHVzdGVyLmxvY2FsIiwia3ViZXJuZXRlcy5pbyI6eyJuYW1lc3BhY2UiOiJrdWJlcm5ldGVzLWRhc2hib2FyZCIsInNlcnZpY2VhY2NvdW50Ijp7Im5hbWUiOiJhZG1pbi11c2VyIiwidWlkIjoiMjZmYzQ4NjktODYwZi00ZGUzLWE2ZjQtZDIzZTc5ZDkzZmRhIn19LCJuYmYiOjE3MTcxMjA1NDIsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDprdWJlcm5ldGVzLWRhc2hib2FyZDphZG1pbi11c2VyIn0.A1Co_ux589Tur-Hk7fPbiU6Kbj-qQm5rfvFZtInoIZlyg994bH19EpmRc8fDPzJLiQsHKIZ3EkQpfzD8Qig7lcxxvmQo9Wiqc8eImyzN6O7E6sd6zt-Feiq3oa0S9sG5Pp4t26Qk_DvbU9sqAySsu5b-tppLFfOBjhBqmNG1t_aF599KWV3owy1d_TDpQDbcEOVm6JL1rbJGQDGKanpehOXAIdn1s-3lndg6-dE2Sy32fqGld69FvjVSJX0AENpc-n392QBfjjE2692boYMDglJPgmElT0D5XOtM9LA6pkg9QVdxyHILIcbIaqYbaklxU28sAI_o4fcUbbnNDcGNsw";
+                #proxy_set_header Host $host;
+                #proxy_set_header X-Real-IP $remote_addr;
+                #proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header Authorization "Bearer xxx";
         }
 
         # pass PHP scripts to FastCGI server
