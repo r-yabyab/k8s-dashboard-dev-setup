@@ -1,4 +1,4 @@
--- generated when installing via helm
+#generated when installing via helm
 apiVersion: v1
 kind: ConfigMap
 metadata:
