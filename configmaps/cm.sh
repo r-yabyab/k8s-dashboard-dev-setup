@@ -2,6 +2,8 @@
 
 # chmod +x cm.sh
 
+kubectl create ns kubernetes-dashboard
+
 kubectl create configmap kubernetes-dashboard-settings \
   --namespace=kubernetes-dashboard \
   --from-literal=namespace=kubernetes-dashboard \
@@ -13,21 +15,13 @@ kubectl create clusterrolebinding admin-user \
   --clusterrole=cluster-admin \
   --serviceaccount=kubernetes-dashboard:admin-user
 
-sudo apt-get install nginx
+sudo apt-get install nginx -y
 
-TOKEN=$(kubectl -n kubernetes-dashboard create token admin-user | grep '^token' | awk '{print $2}')
+TOKEN=$(kubectl -n kubernetes-dashboard create token admin-user)
 
-echo "
-server {
-    listen 80 default_server;
-    server_name _;
+sudo rm /etc/nginx/sites-available/default
 
-    location / {
-        proxy_pass http://localhost:8080/;
-        proxy_set_header Authorization \"Bearer $TOKEN\";
-    }
-}
-" | sudo tee /etc/nginx/sites-available/reverse-proxy > /dev/null
+sudo mv default /etc/nginx/sites-available/default
 
 sudo systemctl restart nginx
 
