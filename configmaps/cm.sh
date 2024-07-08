@@ -1,3 +1,7 @@
+#!/bin/bash
+
+# chmod +x cm.sh
+
 kubectl create configmap kubernetes-dashboard-settings \
   --namespace=kubernetes-dashboard \
   --from-literal=namespace=kubernetes-dashboard \
