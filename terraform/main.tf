@@ -14,3 +14,17 @@ resource "aws_instance" "my_instance_worker" {
     volume_size = 30
   }
 }
+
+####ports (0.0.0.0/0)
+#
+# defaults 
+#
+# SSH 22
+# HTTP 80
+# HTTPS 443
+#
+# TCP 8001
+# TCP 8000
+# TCP 30000 - 32767
+# TCP 8080
+# TCP 8443
