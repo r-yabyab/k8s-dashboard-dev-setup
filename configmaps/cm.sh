@@ -19,10 +19,10 @@ sudo apt-get install nginx -y
 
 TOKEN=$(kubectl -n kubernetes-dashboard create token admin-user)
 
-sudo rm /etc/nginx/sites-available/default
+# sudo rm /etc/nginx/sites-available/default
 
-sudo mv default /etc/nginx/sites-available/default
+# sudo mv default /etc/nginx/sites-available/default
 
-sudo systemctl restart nginx
+# sudo systemctl restart nginx
 
 
