@@ -17,7 +17,9 @@ kubectl create clusterrolebinding admin-user \
 
 sudo apt-get install nginx -y
 
-TOKEN=$(kubectl -n kubernetes-dashboard create token admin-user)
+# TOKEN=$(kubectl -n kubernetes-dashboard create token admin-user)
+
+# kubectl -n kubernetes-dashboard create token admin-user --duration=8760h
 
 # sudo rm /etc/nginx/sites-available/default
 
