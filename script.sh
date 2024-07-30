@@ -1,5 +1,6 @@
 #!/bin/bash
 
+  # paste this chmod and run as is (not sudo) or it breaks everything
 # chmod +x script.sh
 
 set -euxo pipefail
@@ -85,3 +86,5 @@ cd dashboard
 sudo sh -c 'cd modules/web && yarn'
 
 cd /$HOME/dashboard/modules/web/hack/scripts && ./dev.serve.sh
+
+# exit ssh and re enter to apply gopath for make serve
