@@ -1,0 +1,70 @@
+Bearer Token Authentication not responding #8794
+Not passing through http
+api/v1/me GET request from browser doesn’t contain Authorization: Bearer <token> header, thus /me endpoint cannot validate user.
+
+	What I’m trying to fix
+Authentication header not being passed to http in the dev environment (make run) because it’s only able to access using http. Prod can use https or http, 
+
+	How a login works:
+Initial load on dashboard via browser, sends GET /api/v1/me (http://54.185.216.189:8080/api/v1/me) ⇒ 401 via network tab
+(dashboard-auth) on terminal
+auth /api/v1 is hosted on port 8000, but grabbing from 8080?
+⇒ Changing all to 8080 in dev.kong.yml causes everything 502 bad gateway, terminal doesnt log anything either except angular server spinning up
+⇒ Changing argPort from 8000 to 8001 on /auth/pkg/args.go causes 502 bad gateway
+	⇒ 502 when port changed to 8080 as well
+⇒ Changing argInsecurePort from 8000 to 8001 and argPort from 8001 to 8000 just gives the typical 401
+When submit login with token, sends POST /api/v1/login ⇒ 401 via network tab
+(dashboard-auth) on terminal as 401 error
+
+	When on production (make helm, takes about 17 minutes to spin up after make serve)
+Release "kubernetes-dashboard" does not exist. Installing it now.
+Error: Unable to continue with install: APIService "v1beta1.metrics.k8s.io" in namespace "" exists and cannot be imported into the current release: invalid ownership metadata; label validation error: missing key "app.kubernetes.io/managed-by": must be set to "Helm"; annotation validation error: missing key "meta.helm.sh/release-name": must be set to "kubernetes-dashboard"; annotation validation error: missing key "meta.helm.sh/release-namespace": must be set to "dashboard"
+make: *** [Makefile:138: helm] Error 1
+... Probably dont spin it up after doing make serve
+
+
+	Components:
+dashboard-web-go, contains web app written in Angular and Go server with some web-related logic (e.g. sending GET to /settings), main task to present data fetched from Kubernetes API through the API module (API module being referred as an extension to the Kubernetes API by providing functionality like aggregation)
+Volumes (files) specified in dev.compose.yml
+
+    volumes:
+      - ${PWD}/modules/common:/workspace/common # Required - Common dir watched by AIR
+      - ${PWD}/modules/web/pkg:/workspace/web/pkg # Required - Source dir watched by AIR
+      - ${PWD}/modules/web/main.go:/workspace/web/main.go # Required - Entry file watched by AIR
+      - ${PWD}/modules/web/.air.toml:/workspace/web/.air.toml # Required - AIR configuration
+      - ${KUBECONFIG:?}:${KUBECONFIG:?} # Required - local kubeconfig path resolves to $HOME/<user>/.kube/config
+
+dashboard-auth, handles authentication to the Kubernetes API
+In dev.compose.yml
+    volumes:
+      - ${PWD}/modules/common:/workspace/common # Required - Common dir watched by AIR
+      - ${PWD}/modules/auth/pkg:/workspace/auth/pkg # Required - Source dir watched by AIR
+      - ${PWD}/modules/auth/api:/workspace/auth/api # Required - Source dir watched by AIR
+      - ${PWD}/modules/auth/main.go:/workspace/auth/main.go # Required - Entry file watched by AIR
+      - ${PWD}/modules/auth/.air.toml:/workspace/auth/.air.toml # Required - AIR configuration
+      - ${KUBECONFIG:?}:${KUBECONFIG:?} # Required - local kubeconfig path resolves to $HOME/<user>/.kube/config
+
+
+make run runs production server (does that include https??)
+make helm runs helm (basically production using kind)
+
+Authorization header silently blocked when UI is served on HTTPS #9252
+
+Unknown error (200): Http failure during parsing for https://<site>/api/v1/csrftoken/login
+Multiple users having trouble with http, fixed through disabling CSRF, enable http in kong
+In prod environment
+Unknown error (200): Http failure during parsing for https://<site>/api/v1/csrftoken/login
+
+api:
+  containers:
+    args:
+      - '--disable-csrf-protection=true'
+web:
+  scaling:
+    replicas: 2
+    args:
+      - '--disable-csrf-protection=true'
+kong:
+  proxy:
+    http:
+      enabled: true
