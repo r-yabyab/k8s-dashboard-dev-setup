@@ -88,3 +88,11 @@ sudo sh -c 'cd modules/web && yarn'
 cd /$HOME/dashboard/modules/web/hack/scripts && ./dev.serve.sh
 
 # exit ssh and re enter to apply gopath for make serve
+
+# if make helm, install Kind first
+# go install sigs.k8s.io/kind@v0.24.0
+
+#then helm install
+#curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+#chmod 700 get_helm.sh
+#./get_helm.sh
