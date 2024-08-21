@@ -15,6 +15,11 @@ resource "aws_instance" "my_instance_worker" {
   }
 }
 
+output "Connect_to_node" {
+  value = "ssh -i path/to/your/pem ubuntu@${aws_instance.my_instance_worker.public_ip}"
+  description = "Connect to node"
+}
+
 ####ports (0.0.0.0/0)
 #
 # defaults 
