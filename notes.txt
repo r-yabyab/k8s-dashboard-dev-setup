@@ -225,3 +225,28 @@ ok      k8s.io/dashboard/helpers        0.005s
 [common.types] Running tests
 ?       k8s.io/dashboard/types  [no test files]
 ```
+
+
+
+
+...
+
+# $ which go
+
+# put in end of line .bashrc
+# export GOPATH=/home/ubuntu/go
+# export PATH=$PATH:$GOPATH/bin
+# NOT THIS ONE export PATH=$PATH:/usr/local/go/bin
+##### not this either export GOPATH=/home/go maybe this
+## Maybe this: go env -w GOPATH=$HOME/go
+
+## perms
+# sudo chown -R root:root ./go
+## prob this in .bashrc ##TRYING THIS 16:14
+# export GOPATH=$HOME/go
+# export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+
+# WORKS .bashrc
+# export GOROOT=/usr/local/go
+# export GOPATH=$HOME/go
+# export PATH=$GOPATH/bin:$GOROOT/bin:$PATH

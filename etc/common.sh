@@ -10,25 +10,7 @@ sudo sh -c 'rm -rf /usr/local/go && tar -C /usr/local -xzf go1.22.3.linux-amd64.
 sudo sh -c 'echo "export PATH=\$PATH:/usr/local/go/bin" >> /etc/profile'
 source /etc/profile
 
-# $ which go
-
-# put in end of line .bashrc
-# export GOPATH=/home/ubuntu/go
-# export PATH=$PATH:$GOPATH/bin
-# NOT THIS ONE export PATH=$PATH:/usr/local/go/bin
-##### not this either export GOPATH=/home/go maybe this
-## Maybe this: go env -w GOPATH=$HOME/go
-
-## perms
-# sudo chown -R root:root ./go
-## prob this in .bashrc ##TRYING THIS 16:14
-# export GOPATH=$HOME/go
-# export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
-
-# WORKS .bashrc
-# export GOROOT=/usr/local/go
-# export GOPATH=$HOME/go
-# export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+#set path variable in .bashrc
 sudo sh -c 'echo "export GOROOT=/usr/local/go" >> /$HOME/.bashrc'
 sudo sh -c 'echo "export GOPATH=$HOME/go" >> /$HOME/.bashrc'
 sudo sh -c 'echo "export PATH=$GOPATH/bin:$GOROOT/bin:$PATH" >> /$HOME/.bashrc'
