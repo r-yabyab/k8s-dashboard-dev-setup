@@ -1,0 +1,5 @@
+dashboard/modules/web/src/common/components/container/template.html
+- env var located here as a listed item under containers section
+
+/home/ubuntu/dashboard/modules/web/src/common/components/resourcelist/persistentvolumeclaim/template.html
+- component with search and filter
