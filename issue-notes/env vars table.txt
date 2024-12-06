@@ -2,4 +2,16 @@ dashboard/modules/web/src/common/components/container/template.html
 - env var located here as a listed item under containers section
 
 /home/ubuntu/dashboard/modules/web/src/common/components/resourcelist/persistentvolumeclaim/template.html
-- component with search and filter
+- pvc using kd-card with filter
+
+/home/ubuntu/dashboard/modules/web/src/common/components/card/template.html
+- kd-card styling
+
+/home/ubuntu/dashboard/modules/web/src/common/components/list/filter/component.ts
+- kd-card-list-filer component ts
+
+/home/ubuntu/dashboard/modules/web/src/common/components/card/component.ts
+- kd-card component ts 
+
+/home/ubuntu/dashboard/modules/web/src/common/components/condition/template.html
+- conditions table with a list of items
