@@ -15,3 +15,6 @@ dashboard/modules/web/src/common/components/container/template.html
 
 /home/ubuntu/dashboard/modules/web/src/common/components/condition/template.html
 - conditions table with a list of items
+
+/home/ubuntu/dashboard/modules/web/src/common/components/container/template.html
+- this is where the Env vars are
