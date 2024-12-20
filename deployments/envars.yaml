@@ -227,3 +227,20 @@ spec:
       value: "Bringing the future closer"
     - name: DEMO_FOOTER_TEXT
       value: "Powered by Demo Inc."
+    volumeMounts:
+    - mountPath: "/data1"
+      name: test-volume-1
+    - mountPath: "/data2"
+      name: test-volume-2
+    - mountPath: "/data3"
+      name: test-volume-3
+  volumes:
+  - name: test-volume-1
+    persistentVolumeClaim:
+      claimName: test-pvc-1
+  - name: test-volume-2
+    persistentVolumeClaim:
+      claimName: test-pvc-2
+  - name: test-volume-3
+    persistentVolumeClaim:
+      claimName: test-pvc-3
