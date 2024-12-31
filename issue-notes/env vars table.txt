@@ -17,3 +17,33 @@
 - this is where the Env vars are
     1. Non secret env vars
     2. Secret env vars
+
+
+----------
+- key value with missing routerLinks for cm and secrets
+    <mat-table 
+      [dataSource]="dataSource" 
+      [trackBy]="getEnvVarID"
+      class="mat-elevation-z8"
+    >
+
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+        <mat-cell 
+          *matCellDef="let element" 
+          class="col-stretch-m"
+          >{{ element.name }}</mat-cell
+        >
+      </ng-container>
+    
+      <ng-container matColumnDef="value">
+        <mat-header-cell *matHeaderCellDef>Value</mat-header-cell>
+        <mat-cell 
+          *matCellDef="let element" 
+          class="col-stretch-m">{{ element.value }}</mat-cell
+        >
+      </ng-container>
+    
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
