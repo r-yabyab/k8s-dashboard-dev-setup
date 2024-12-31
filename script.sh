@@ -88,6 +88,9 @@ sudo sh -c 'cd modules/web && yarn'
 cd /$HOME/dashboard/modules/web/hack/scripts && ./dev.serve.sh
 
 # exit ssh and re enter to apply gopath for make serve
+# make serve takes about 20 minutes to start up. Angular will go into watch mode then wait a bit for dashboard-api to run again 
+# Run /configmaps/cm.sh then add token to default, run at http://localhost
+
 
 # if make helm, install Kind first
 # go install sigs.k8s.io/kind@v0.24.0

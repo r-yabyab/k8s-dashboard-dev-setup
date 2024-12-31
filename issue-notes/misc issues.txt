@@ -1,0 +1,5 @@
+/home/ubuntu/dashboard/modules/web/src/common/components/module.ts
+- NgModule imports MatTableModule twice
+
+
+- Pods.containers in frontend doesn't collapse correctly when minimizing compared to other sections
