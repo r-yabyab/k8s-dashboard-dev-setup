@@ -227,6 +227,26 @@ spec:
       value: "Bringing the future closer"
     - name: DEMO_FOOTER_TEXT
       value: "Powered by Demo Inc."
+    - name: CONFIGMAP_KEY1
+      valueFrom:
+        configMapKeyRef:
+          name: sample-configmap-1
+          key: key1
+    - name: CONFIGMAP_KEYA
+      valueFrom:
+        configMapKeyRef:
+          name: sample-configmap-2
+          key: keyA
+    - name: SECRET_USERNAME
+      valueFrom:
+        secretKeyRef:
+          name: sample-secret-1
+          key: username
+    - name: SECRET_APIKEY
+      valueFrom:
+        secretKeyRef:
+          name: sample-secret-2
+          key: apiKey
     volumeMounts:
     - mountPath: "/data1"
       name: test-volume-1
