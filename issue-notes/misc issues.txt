@@ -3,3 +3,5 @@
 
 
 - Pods.containers in frontend doesn't collapse correctly when minimizing compared to other sections
+
+- In Pods.name, CPU Usage chart glitches between 1370 to 1383
