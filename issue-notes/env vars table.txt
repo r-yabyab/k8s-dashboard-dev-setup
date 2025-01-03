@@ -19,6 +19,10 @@
     2. Secret env vars
 
 
+- sorting issue:
+https://github.com/kubernetes/dashboard/pull/1792
+
+
 ----------
 - key value with missing routerLinks for cm and secrets
     <mat-table 
