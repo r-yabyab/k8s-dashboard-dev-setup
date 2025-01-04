@@ -51,3 +51,31 @@ https://github.com/kubernetes/dashboard/pull/1792
       <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
       <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
     </mat-table>
+
+
+
+============
+env-var-list.components.ts<div>
+... data not passing through
+
+    <mat-table [dataSource]="getData()" matSort matSortActive="name" matSortDisableClear matSortDirection="asc">
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
+        <mat-cell *matCellDef="let envVar">{{ envVar.name }}</mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="value">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Value</mat-header-cell>
+        <mat-cell *matCellDef="let envVar">{{ envVar.value }}</mat-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="getDisplayColumns()"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: getDisplayColumns()"></mat-row>
+    </mat-table>
+  
+    <mat-paginator [length]="totalItems" [pageSize]="itemsPerPage" showFirstLastButtons></mat-paginator>
+  </div>
+
+
+  ..... in container.ts.html
+<kd-env-var-list [envVarList]="container.env" [id]="container.name + '-env-vars'"></kd-env-var-list>
