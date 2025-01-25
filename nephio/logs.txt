@@ -1,0 +1,22 @@
+deployment.apps/function-runner reconcile pending
+deployment.apps/porch-controllers reconcile pending
+deployment.apps/porch-server reconcile pending
+deployment.apps/porch-controllers reconcile successful
+deployment.apps/function-runner reconcile successful
+deployment.apps/porch-controllers reconcile pending
+deployment.apps/porch-controllers reconcile successful
+deployment.apps/porch-controllers reconcile pending
+deployment.apps/porch-controllers reconcile successful
+deployment.apps/porch-controllers reconcile pending
+deployment.apps/porch-controllers reconcile successful
+deployment.apps/porch-controllers reconcile pending
+deployment.apps/porch-controllers reconcile successful
+deployment.apps/porch-server reconcile failed
+reconcile phase finished
+inventory update started
+inventory update finished
+apply result: 29 attempted, 29 successful, 0 skipped, 0 failed
+reconcile result: 33 attempted, 32 successful, 0 skipped, 1 failed, 0 timed out
+
+When running on 24.04 Ubuntu
+Recommended is 22.04

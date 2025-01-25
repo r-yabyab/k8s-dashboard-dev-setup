@@ -11,12 +11,13 @@ resource "aws_instance" "my_instance_worker" {
   key_name        = "kube-server"
   security_groups = ["k8s-dashboard-dev"]
   root_block_device {
-    volume_size = 30
+    volume_size = 50
+# 30 for k8s dashboard, 50 nephio
   }
 }
 
 output "Connect_to_node" {
-  value = "ssh -i path/to/your/pem ubuntu@${aws_instance.my_instance_worker.public_ip}"
+  value = "ssh -i kube-server.pem ubuntu@${aws_instance.my_instance_worker.public_ip}"
   description = "Connect to node"
 }
 
