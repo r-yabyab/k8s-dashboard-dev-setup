@@ -17,6 +17,8 @@ kubectl create clusterrolebinding admin-user \
 
 sudo apt-get install nginx -y
 
+# use reverse proxy to log in, can't use UI
+
 # TOKEN=$(kubectl -n kubernetes-dashboard create token admin-user)
 
 # kubectl -n kubernetes-dashboard create token admin-user --duration=8760h

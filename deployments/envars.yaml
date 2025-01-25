@@ -1,0 +1,266 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: envar-demo
+  labels:
+    purpose: demonstrate-envars
+spec:
+  containers:
+  - name: envar-demo-container
+    image: gcr.io/google-samples/hello-app:2.0
+    env:
+    - name: DEMO_GREETING
+      value: "Hello from the environment"
+    - name: DEMO_FAREWELL
+      value: "Such a sweet sorrow"
+    - name: APP_TITLE
+      value: "My Amazing App"
+    - name: APP_VERSION
+      value: "1.0.0"
+    - name: APP_DESCRIPTION
+      value: "This is a sample application."
+    - name: DEMO_USER
+      value: "demo_user"
+    - name: DEMO_PASSWORD
+      value: "demo_password"
+    - name: SERVICE_TIMEOUT
+      value: "30"
+    - name: SERVICE_RETRY
+      value: "3"
+    - name: FEATURE_TOGGLE_A
+      value: "true"
+    - name: FEATURE_TOGGLE_B
+      value: "false"
+    - name: MAINTENANCE_MODE
+      value: "off"
+    - name: LOG_LEVEL
+      value: "info"
+    - name: LOG_FORMAT
+      value: "json"
+    - name: API_URL
+      value: "https://api.example"
+    - name: API_KEY
+      value: "1234567890abcdef"
+    - name: DATABASE_URL
+      value: "jdbc:postgresql://db.example.com:0000/mydb"
+    - name: DATABASE_USER
+      value: "db_user"
+    - name: DATABASE_PASSWORD
+      value: "db_password"
+    - name: CACHE_TTL
+      value: "600"
+    - name: SESSION_TIMEOUT
+      value: "300"
+    - name: SUPPORT_EMAIL
+      value: "zzzzzzzzzzzzzzzzz"
+    - name: NOTIFICATION_EMAIL
+      value: "zzzzzzzzzzz"
+    - name: SMTP_SERVER
+      value: "smtp.example.com"
+    - name: SMTP_PORT
+      value: "587"
+    - name: SMTP_USER
+      value: "smtp_user"
+    - name: SMTP_PASSWORD
+      value: "smtp_password"
+    - name: ANALYTICS_ENABLED
+      value: "true"
+    - name: ANALYTICS_TRACKING_ID
+      value: "UA-12345678-1"
+    - name: MAX_UPLOAD_SIZE
+      value: "5242880" # 5 MB
+    - name: DEFAULT_LANGUAGE
+      value: "en_US"
+    - name: FALLBACK_LANGUAGE
+      value: "en"
+    - name: CURRENCY
+      value: "USD"
+    - name: TIMEZONE
+      value: "America/New_York"
+    - name: REDIS_HOST
+      value: "redis.example.com"
+    - name: REDIS_PORT
+      value: "6379"
+    - name: REDIS_PASSWORD
+      value: "redis_password"
+    - name: QUEUE_NAME
+      value: "job_queue"
+    - name: WORKER_CONCURRENCY
+      value: "4"
+    - name: DEBUG_MODE
+      value: "false"
+    - name: ENABLE_CORS
+      value: "true"
+    - name: ALLOWED_ORIGINS
+      value: "https://example.com,https://another.com"
+    - name: RATE_LIMIT
+      value: "100"
+    - name: RATE_LIMIT_WINDOW
+      value: "60"
+    - name: ERROR_TRACKING_SERVICE
+      value: "Sentry"
+    - name: ERROR_TRACKING_KEY
+      value: "sentry_key"
+    - name: ERROR_TRACKING_URL
+      value: "https://sentry.example.com"
+    - name: IMAGE_PROCESSING_TIMEOUT
+      value: "120"
+    - name: DEFAULT_IMAGE_QUALITY
+      value: "85"
+    - name: ASSET_CDN_URL
+      value: "https://cdn.example.com"
+    - name: MAX_IMAGE_SIZE
+      value: "1024"
+    - name: MAX_VIDEO_SIZE
+      value: "104857600" # 100 MB
+    - name: VIDEO_PROCESSING_ENABLED
+      value: "true"
+    - name: AUDIO_PROCESSING_ENABLED
+      value: "true"
+    - name: SMS_PROVIDER
+      value: "Twilio"
+    - name: SMS_API_KEY
+      value: "twilio_api_key"
+    - name: SMS_SENDER_NUMBER
+      value: "+1234567890"
+    - name: PUSH_NOTIFICATIONS_ENABLED
+      value: "true"
+    - name: PUSH_SERVICE_URL
+      value: "https://push.example.com"
+    - name: MAPS_API_KEY
+      value: "maps_api_key"
+    - name: GEOLOCATION_SERVICE
+      value: "GeoService"
+    - name: WEATHER_API_URL
+      value: "https://weather.example.com"
+    - name: MAX_CONCURRENT_USERS
+      value: "1000"
+    - name: MIN_PASSWORD_LENGTH
+      value: "8"
+    - name: MAX_PASSWORD_LENGTH
+      value: "32"
+    - name: PASSWORD_COMPLEXITY
+      value: "high"
+    - name: OTP_EXPIRY_TIME
+      value: "300"
+    - name: OTP_RETRY_LIMIT
+      value: "3"
+    - name: MULTI_FACTOR_AUTH
+      value: "enabled"
+    - name: APP_URL
+      value: "https://app.example.com"
+    - name: SUPPORT_CHAT_ENABLED
+      value: "true"
+    - name: SUPPORT_CHAT_URL
+      value: "https://chat.example.com"
+    - name: FEEDBACK_FORM_URL
+      value: "https://feedback.example.com"
+    - name: DEFAULT_AVATAR_URL
+      value: "https://cdn.example.com/avatar.png"
+    - name: GDPR_COMPLIANCE
+      value: "true"
+    - name: PRIVACY_POLICY_URL
+      value: "https://example.com/privacy"
+    - name: TERMS_OF_SERVICE_URL
+      value: "https://example.com/terms"
+    - name: SUPPORT_HOTLINE
+      value: "+18001234567"
+    - name: SUPPORT_HOTLINE_COUNTRY
+      value: "US"
+    - name: MAX_SESSION_STORAGE
+      value: "10485760" # 10 MB
+    - name: DOCUMENT_UPLOAD_PATH
+      value: "/uploads/documents"
+    - name: FILE_RETENTION_PERIOD
+      value: "30"
+    - name: BACKUP_ENABLED
+      value: "true"
+    - name: BACKUP_CRON
+      value: "0 2 * * *"
+    - name: MAX_BACKUP_SIZE
+      value: "104857600" # 100 MB
+    - name: AUTO_UPDATE
+      value: "false"
+    - name: RECAPTCHA_SITE_KEY
+      value: "recaptcha_site_key"
+    - name: RECAPTCHA_SECRET_KEY
+      value: "recaptcha_secret_key"
+    - name: DEFAULT_THEME
+      value: "light"
+    - name: ENABLE_DARK_MODE
+      value: "true"
+    - name: REFRESH_INTERVAL
+      value: "300"
+    - name: API_RATE_LIMIT
+      value: "1000"
+    - name: ASSET_VERSION
+      value: "2.1.3"
+    - name: TRANSACTION_CURRENCY
+      value: "USD"
+    - name: PAYMENT_PROVIDER
+      value: "Stripe"
+    - name: PAYMENT_API_KEY
+      value: "payment_api_key"
+    - name: EXCHANGE_RATE_API_URL
+      value: "https://exchange.example.com"
+    - name: MAX_API_RETRY
+      value: "5"
+    - name: RETRY_DELAY
+      value: "2"
+    - name: FEATURE_PREMIUM_SUPPORT
+      value: "enabled"
+    - name: ENABLE_LOG_ROTATION
+      value: "true"
+    - name: LOG_ROTATION_SIZE
+      value: "10485760" # 10 MB
+    - name: LOG_RETENTION_DAYS
+      value: "30"
+    - name: DEMO_MESSAGE
+      value: "Hello from the demo environment!"
+    - name: DEMO_GOODBYE
+      value: "Goodbye and thank you!"
+    - name: DEBUG_EMAILS
+      value: "debug@example.com"
+    - name: ALLOW_USER_REGISTRATION
+      value: "true"
+    - name: DEMO_SLOGAN
+      value: "Bringing the future closer"
+    - name: DEMO_FOOTER_TEXT
+      value: "Powered by Demo Inc."
+    - name: CONFIGMAP_KEY1
+      valueFrom:
+        configMapKeyRef:
+          name: sample-configmap-1
+          key: key1
+    - name: CONFIGMAP_KEYA
+      valueFrom:
+        configMapKeyRef:
+          name: sample-configmap-2
+          key: keyA
+    - name: SECRET_USERNAME
+      valueFrom:
+        secretKeyRef:
+          name: sample-secret-1
+          key: username
+    - name: SECRET_APIKEY
+      valueFrom:
+        secretKeyRef:
+          name: sample-secret-2
+          key: apiKey
+    volumeMounts:
+    - mountPath: "/data1"
+      name: test-volume-1
+    - mountPath: "/data2"
+      name: test-volume-2
+    - mountPath: "/data3"
+      name: test-volume-3
+  volumes:
+  - name: test-volume-1
+    persistentVolumeClaim:
+      claimName: test-pvc-1
+  - name: test-volume-2
+    persistentVolumeClaim:
+      claimName: test-pvc-2
+  - name: test-volume-3
+    persistentVolumeClaim:
+      claimName: test-pvc-3
