@@ -3,7 +3,11 @@ provider "aws" {
 }
 
 resource "aws_instance" "my_instance_worker" {
-  ami           = "ami-0cf2b4e024cdb6960"
+  # 24.04
+  # ami           = "ami-0cf2b4e024cdb6960"
+  # 22.04
+  ami           = "ami-0606dd43116f5ed57"
+  
   instance_type = "t3.large"
   tags = {
     "Name" = "k8s-dashboard-dev-master"
