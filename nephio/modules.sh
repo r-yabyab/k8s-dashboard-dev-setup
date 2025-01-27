@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo usermod -aG docker ubuntu
+set -euxo pipefail
 
 # Install kind
 go install sigs.k8s.io/kind@v0.26.0
