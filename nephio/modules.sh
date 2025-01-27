@@ -2,6 +2,8 @@
 
 set -euxo pipefail
 
+cd $HOME
+
 # Install kind
 go install sigs.k8s.io/kind@v0.26.0
 
