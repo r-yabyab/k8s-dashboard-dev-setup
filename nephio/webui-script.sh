@@ -2,6 +2,8 @@
 
 set -euxo pipefail
 
+cd $HOME
+
 # https://docs.nephio.org/docs/guides/install-guides/web-ui/
 
 # pull kpt package

@@ -20,3 +20,56 @@ reconcile result: 33 attempted, 32 successful, 0 skipped, 1 failed, 0 timed out
 
 When running on 24.04 Ubuntu
 Recommended is 22.04
+
+
+
+
+====================
+
+installing inventory ResourceGroup CRD.
+inventory update started
+inventory update finished
+apply phase started
+namespace/gitea apply successful
+apply phase finished
+reconcile phase started
+namespace/gitea reconcile successful
+reconcile phase finished
+apply phase started
+secret/git-user-secret apply successful
+secret/gitea apply successful
+secret/gitea-init apply successful
+secret/gitea-inline-config apply successful
+secret/gitea-postgresql apply successful
+service/gitea apply successful
+service/gitea-memcached apply successful
+service/gitea-postgresql apply successful
+service/gitea-postgresql-hl apply successful
+deployment.apps/gitea-memcached apply successful
+statefulset.apps/gitea apply successful
+statefulset.apps/gitea-postgresql apply successful
+apply phase finished
+reconcile phase started
+secret/git-user-secret reconcile successful
+secret/gitea reconcile successful
+secret/gitea-init reconcile successful
+secret/gitea-inline-config reconcile successful
+secret/gitea-postgresql reconcile successful
+service/gitea reconcile successful
+service/gitea-memcached reconcile successful
+service/gitea-postgresql reconcile successful
+service/gitea-postgresql-hl reconcile successful
+deployment.apps/gitea-memcached reconcile pending
+statefulset.apps/gitea reconcile pending
+statefulset.apps/gitea-postgresql reconcile pending
+statefulset.apps/gitea reconcile failed
+statefulset.apps/gitea-postgresql reconcile failed
+deployment.apps/gitea-memcached reconcile successful
+reconcile phase finished
+inventory update started
+inventory update finished
+apply result: 13 attempted, 13 successful, 0 skipped, 0 failed
+reconcile result: 13 attempted, 11 successful, 0 skipped, 2 failed, 0 timed out
+
+22.04 ubuntu, kpt gitea
+- kpt porch has the same 1 reconcile failure

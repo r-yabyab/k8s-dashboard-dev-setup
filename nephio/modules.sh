@@ -25,6 +25,8 @@ kpt live apply gitea
 
 # Make Gitea visible on host machine
 # kubectl port-forward -n gitea svc/gitea 3000:3000
+# sudo vim /etc/nginx/sites-available/default
+    # try to do without port forwarding or nginx
 
 # Install Porch
 kpt pkg get https://github.com/nephio-project/catalog.git/nephio/core/porch@main porch
