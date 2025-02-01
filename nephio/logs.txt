@@ -73,3 +73,7 @@ reconcile result: 13 attempted, 11 successful, 0 skipped, 2 failed, 0 timed out
 
 22.04 ubuntu, kpt gitea
 - kpt porch has the same 1 reconcile failure
+
+01/31/24
+- when installing kind then porch by themselves, no reconcile failures
+- Get webui with packagerevisions to work by running script + get kind with porch, then install package repos with https://github.com/GoogleContainerTools/kpt-backstage-plugins/tree/main/hack

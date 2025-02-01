@@ -18,6 +18,9 @@ kind create cluster -n mgmt
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
+# jq
+sudo apt install -y jq
+
 # Install Gitea
 kpt pkg get https://github.com/nephio-project/catalog.git/distros/sandbox/gitea@main gitea
 kpt live init gitea

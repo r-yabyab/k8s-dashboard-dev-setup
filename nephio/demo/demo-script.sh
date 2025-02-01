@@ -7,3 +7,5 @@
 
 # environments/config-sync-demo/start
 
+# if not already installed
+sudo apt install -y python3
