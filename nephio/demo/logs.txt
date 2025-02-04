@@ -1,0 +1,9 @@
+warning "workspace-aggregator-791a08df-83ff-486a-b68a-fa6ad333d33e > app > @backstage/plugin-user-settings > @backstage/plugin-catalog-react > @backstage/frontend-test-utils@0.2.5" has incorrect peer dependency "@testing-library/react@^16.0.0".
+warning "workspace-aggregator-791a08df-83ff-486a-b68a-fa6ad333d33e > backend > @backstage/plugin-catalog-backend > @backstage/backend-openapi-utils > @apidevtools/swagger-parser@10.1.1" has unmet peer dependency "openapi-types@>=7".
+warning Workspaces can only be enabled in private projects.
+[5/5] Building fresh packages...
+success Saved lockfile.
+Done in 203.70s.
+ubuntu@ip-172-31-19-192:~/kpt-backstage-plugins$
+
+- when change better-sqlite3 to current version
