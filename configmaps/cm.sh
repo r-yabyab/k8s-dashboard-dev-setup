@@ -27,7 +27,7 @@ sudo rm /etc/nginx/sites-available/default
 
 sudo mv default /etc/nginx/sites-available/default
 
-kubectl -n kubernetes-dashboard create token admin-user
+kubectl -n kubernetes-dashboard create token admin-user --duration=8760h
 
 # sudo systemctl restart nginx
 

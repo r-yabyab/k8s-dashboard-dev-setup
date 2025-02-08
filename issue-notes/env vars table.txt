@@ -5,13 +5,14 @@
 - kd-card styling
 
 /home/ubuntu/dashboard/modules/web/src/common/components/list/filter/component.ts
-- kd-card-list-filer component ts
+- kd-card-list-filter component ts
 
 /home/ubuntu/dashboard/modules/web/src/common/components/card/component.ts
 - kd-card component ts 
 
 /home/ubuntu/dashboard/modules/web/src/common/components/condition/template.html
 - conditions table with a list of items
+- no filtering
 
 /home/ubuntu/dashboard/modules/web/src/common/components/container/template.html
 - this is where the Env vars are
@@ -19,8 +20,18 @@
     2. Secret env vars
 
 
-- sorting issue:
+- Sorting PR here:
 https://github.com/kubernetes/dashboard/pull/1792
+- "Moved list, list-resource and data-select-id dependency from kd-resource-card-list-pagination to 
+   kd-resource-card-list. It will be shared with child components thanks to parent - child relationship 
+   between components."
+- All of them use DataSelectService
+- Only resources can use these...
+  -  environment variables are not resources, they are scattered through:
+      - Pod specs,
+      - ConfigMap,
+      - Secret
+      ... so can't extend Resourcelist
 
 
 ----------
