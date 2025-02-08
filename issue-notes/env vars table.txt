@@ -33,6 +33,15 @@ https://github.com/kubernetes/dashboard/pull/1792
       - Secret
       ... so can't extend Resourcelist
 
+- These are not k8s resources but uses DataSelectService
+// in root.api.ts
+export interface LogSources {
+  podNames: string[];
+  containerNames: string[];
+  initContainerNames: string[];
+}
+LogSources, LogDetails, LogInfo, LogLine, LogControl
+
 
 ----------
 - key value with missing routerLinks for cm and secrets
