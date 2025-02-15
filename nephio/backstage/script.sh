@@ -16,10 +16,12 @@ sudo npm install --global yarn
 git clone https://github.com/nephio-project/kpt-backstage-plugins.git
 cd kpt-backstage-plugins
 
-# Install dep for sqlite3
-npm install -g node-gyp
-
 sudo chown -R $USER:$USER /home/ubuntu/kpt-backstage-plugins
 
+# Install dep for sqlite3
+sudo npm install -g node-gyp
 
-sudo apt install build-essential
+sudo apt install build-essential -y
+
+# install deps
+yarn install

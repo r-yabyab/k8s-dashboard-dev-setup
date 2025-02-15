@@ -1,2 +1,17 @@
 https://github.com/nephio-project/nephio-packages
 - yaml to deploy web-ui, only has yamls, no web-ui source code
+
+/home/ubuntu/kpt-backstage-plugins/packages/backend/package.json
+change
+    "better-sqlite3": "^7.5.0",
+to
+    "better-sqlite3": "^11.8.0",
+
+/home/ubuntu/kpt-backstage-plugins/app-config.kubernetes.yaml
+- change base urls to http://<ip>:7007
+/home/ubuntu/kpt-backstage-plugins/app-config.yaml
+- this one too for backend.baseUrl, this fetches from <backend.baseUrl>/api/config-as-data/v1/features
+    - this one gets a CORS ERROR, however still gets
+
+2/14/25
+- facing cors error, might not be cors because 
