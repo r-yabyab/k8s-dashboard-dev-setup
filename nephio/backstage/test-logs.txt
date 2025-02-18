@@ -1,0 +1,7 @@
+Test Suites: 6 passed, 6 total
+Tests:       43 passed, 43 total
+Snapshots:   0 total
+Time:        12.22 s
+Ran all test suites in 3 projects.
+
+- when change better-sqlite3 to newest version
