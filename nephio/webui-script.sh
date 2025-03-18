@@ -19,5 +19,5 @@ kpt live apply nephio-webui --reconcile-timeout=15m --output=table --inventory-p
 
 kubectl port-forward -n nephio-webui svc/nephio-webui 7007:7007
 
-# opens if reverse proxied through nginx, but gets 503 error service unavailable
+# opens if reverse proxied through nginx with port forward, but gets 503 error service unavailable
 # ... no data is available
