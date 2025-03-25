@@ -25,3 +25,11 @@ sudo apt install build-essential -y
 
 # install deps
 yarn install
+
+# run backstage
+# yarn dev
+
+# to make packagerev, packagerevision, packagerevisionresources show:
+# run ../script.sh, install kind, kpt, kubectl, porch
+# run ./hack/install-package-repositories.sh, then run this ./script
+# yarn dev 
