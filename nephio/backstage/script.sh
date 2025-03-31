@@ -18,6 +18,10 @@ cd kpt-backstage-plugins
 
 sudo chown -R $USER:$USER /home/ubuntu/kpt-backstage-plugins
 
+# install package repository samples
+cd hack
+./install-package-repositories.sh
+
 # Install dep for sqlite3
 sudo npm install -g node-gyp
 
