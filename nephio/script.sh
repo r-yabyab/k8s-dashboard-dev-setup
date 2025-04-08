@@ -4,6 +4,7 @@
 # chmod +x webui-script.sh
 # chmod +x modules.sh
 
+# git clone https://github.com/r-yabyab/k8s-dashboard-dev-setup
 # https://docs.nephio.org/docs/guides/contributor-guides/minimal-environment/
 
 set -euxo pipefail

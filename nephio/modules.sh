@@ -51,3 +51,6 @@ kpt live apply resource-backend
 # Load the Nephio CRDs
 kpt pkg get https://github.com/nephio-project/catalog/tree/main/nephio/core/nephio-operator nephio-operator
 ls nephio-operator/crd/bases/*.yaml | xargs -n1 kubectl apply -f
+
+
+# packagerev shows, packagerevision and packagerevisionresources do not show
