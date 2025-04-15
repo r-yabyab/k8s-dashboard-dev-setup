@@ -8,7 +8,12 @@ resource "aws_instance" "my_instance_worker" {
   # 22.04
   # ami           = "ami-0606dd43116f5ed57"
   
-  instance_type = "t3.large"
+  instance_type = "c5ad.2xlarge"
+  # 8vCPU, 16GB RAM
+  # $0.3400 per hour
+  # instance_type = "t3.large"
+  # 2vCPU, 8GB RAM
+  # $0.0836 per hour
   tags = {
     "Name" = "k8s-dashboard-dev-master"
   }

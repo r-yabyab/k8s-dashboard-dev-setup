@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # chmod +x modules.sh
-# install kind, kpt, kubectl, porch
+# install kind, kpt, kubectl, porch, gitea
 
 cd $HOME
 
@@ -30,10 +30,20 @@ kpt live apply porch
 # Ignore below if running with webui and don't need gitea
 
 # gitea
-kpt pkg get --for-deployment https://github.com/nephio-project/catalog.git/distros/sandbox/gitea@origin/v3.0.0
-kpt fn render gitea
+kpt pkg get https://github.com/nephio-project/catalog.git/distros/sandbox/gitea@main gitea
 kpt live init gitea
-kpt live apply gitea --reconcile-timeout 15m --output=table
+kpt live apply gitea
+
+sudo apt-get install nginx -y
+sudo rm /etc/nginx/sites-available/default
+sudo mv ../default /etc/nginx/sites-available/default
+sudo systemctl restart nginx
+
+# Make Gitea visible on host machine
+# kubectl port-forward -n gitea svc/gitea 3000:3000
+# sudo vim /etc/nginx/sites-available/default
+
+
 
 # Install Nephio Operators
 # To try this first
