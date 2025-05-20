@@ -12,7 +12,8 @@ sudo apt-get update
 cd $HOME
 
 # Install Go
-wget https://go.dev/dl/go1.22.3.linux-amd64.tar.gz
+wget https://go.dev/dl/go1.24.3.linux-amd64.tar.gz
+# wget https://go.dev/dl/go1.22.3.linux-amd64.tar.gz
 sudo sh -c 'rm -rf /usr/local/go && tar -C /usr/local -xzf go1.22.3.linux-amd64.tar.gz'
 sudo sh -c 'echo "export PATH=\$PATH:/usr/local/go/bin" > /etc/profile.d/go.sh'
 source /etc/profile.d/go.sh
