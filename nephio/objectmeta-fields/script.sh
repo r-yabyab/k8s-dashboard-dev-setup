@@ -1,10 +1,21 @@
 #!/bin/bash
 
 # chmod +x script.sh
+# install kind, kpt, kubectl, porch
 
-set -euxo pipefail
-sudo apt-get update
 cd $HOME
+
+# Install kind and create cluster
+go install sigs.k8s.io/kind@v0.26.0
+kind create cluster -n mgmt
+
+# kubectl download
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+
+##
+## For Backstage
+##
 
 # Install NodeJS
 sudo bash -c 'curl -fsSL https://deb.nodesource.com/setup_22.x | bash - && apt-get install -y nodejs'
@@ -33,8 +44,3 @@ yarn install
 
 # run backstage
 # yarn dev
-
-# to make packagerev, packagerevision, packagerevisionresources show:
-# run ../script.sh, install kind, kpt, kubectl, porch
-# run ./hack/install-package-repositories.sh, then run this ./script
-# yarn dev 

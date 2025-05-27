@@ -1,0 +1,6 @@
+For issue #643
+
+run main script.sh to download docker, etc.
+running backstage/script.sh to run web-ui
+    - web-ui should not be picking anything up because 
+then run porch local to see if I can use porchctl without kpt installed
