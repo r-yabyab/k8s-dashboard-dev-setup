@@ -10,7 +10,8 @@ git clone https://github.com/nephio-project/porch.git
 cd porch
 make tidy
 
-make run
+# Start porch, takes like 5 minutes
+make all
 
 #then set up porchctl
 cd porch/cmd/porchctl
