@@ -37,4 +37,5 @@ cd porch/cmd/porchctl
 go build
 
 #add binary to PATH
+#works when porch isn't running
 sudo mv porchctl /usr/local/bin
