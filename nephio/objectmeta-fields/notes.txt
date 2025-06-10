@@ -5,3 +5,39 @@ run main script.sh to download docker, etc.
 running backstage/script.sh to run web-ui
     - web-ui should not be picking anything up because 
 then run porch local to see if I can use porchctl without kpt installed
+
+
+for porch make all to run, got it to work when installed kpt
+- at first it had this error when I didn't install kpt
+    /usr/bin/ld: warning: x86_64.o: missing .note.GNU-stack section implies executable stack
+    /usr/bin/ld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker
+
+
+
+.....
+
+to get sample change setup
+porch/pkg/registry/porch/table.go
+
+## vvvvvv
+## Do this when starting up WSL or else it won't show CRDs from Porch (like packagerev, repository)
+# export KUBECONFIG=${PWD}/deployments/local/kubeconfig
+export KUBECONFIG=porch/deployments/local/kubeconfig
+
+# Confirm Porch is running
+kubectl api-resources | grep porch
+
+
+/porch/pkg/registry/porch/table.go for checking if changes go
+
+C:\Users\cayab\porch\pkg\repository\repository.go
+	// UpdateLifecycle updates the desired lifecycle of the package. This can only
+	// be used for Published package revisions to go from Published to DeletionProposed
+	// or vice versa. Draft revisions should use PackageDraft.UpdateLifecycle.
+	UpdateLifecycle(ctx context.Context, lifecycle v1alpha1.PackageRevisionLifecycle) error
+
+Make changes to vvvv for draft updates
+C:\Users\cayab\porch\pkg\externalrepo\git\draft.go
+
+
+~/.bash_history

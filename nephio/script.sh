@@ -39,6 +39,7 @@ echo \
 sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 
+# don't need this if in WSL
 sudo usermod -aG docker ubuntu
 
 # then reboot

@@ -1,0 +1,142 @@
+root@DESKTOP-CBP4K2S:~/porch# sudo cat ~/.bash_history
+cd
+sudo apt-get update
+ls
+git clone https://github.com/r-yabyab/k8s-dashboard-dev-setup
+free -h
+df -h
+ls
+cd k8s-dashboard-dev-setup/
+cd nephio/
+chmod +x script.sh
+./script.sh
+source $HOME/.bashrc
+sudo apt-get update
+sudo apt-get install ca-certificates curl -y
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+echo   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" |   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
+exit
+go -v
+go version
+ubuntu -v
+docker -v
+cd
+ls
+cd k8s-dashboard-dev-setup/
+ls
+cd nephio/
+cd
+go install sigs.k8s.io/kind@v0.26.0
+kind create cluster -n mgmt
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+go install -v github.com/GoogleContainerTools/kpt@main
+kpt version
+cd
+cd $HOME
+cd k8s-dashboard-dev-setup/
+cd $HOME
+sudo apt-get install make
+git clone https://github.com/r-yabyab/porch.git
+cd porch/
+cd pkg/
+cd repository/
+vim repository
+vim repository.go
+cd ..
+cd registry/
+cd porch/
+vim table.go
+cd
+cd porch/
+make tidy
+make all
+exit
+cd
+cls
+clear
+exit
+cd
+ls
+cd
+clear
+
+
+
+## below is the session where I picked it back up and couldn't get it to work again
+kubectl get repository
+kubectl get repositories
+kubectl api-resources | grep porch
+kubectl get packagerev
+kubectl get packagerevision
+export KUBECONFIG=porch/deployments/local/kubeconfig
+kubectl get packagerevision
+kubectl get repositories
+kubectl get repositories -A
+kubectl get packagerev -A
+cd
+ls
+cd kpt-backstage-plugins/
+cd hack/
+KUBECONFIG=~/porch/deployments/local/kubeconfig ./install-package-repositories.sh
+kubectl get repositories -A
+cd
+KUBECONFIG=~/porch/deployments/local/kubeconfig ./install-package-repositories.sh
+kubectl get packagerev -A
+kubectl get po -A
+export KUBECONFIG=porch/deployments/local/kubeconfig
+kubectl get po -A
+KUBECONFIG=~/porch/deployments/local/kubeconfig ./install-package-repositories.sh
+cd
+kubectl api-resources | grep porch
+kubectl get ns
+kubectl get po -n kube-system
+kubectl get all -n kube-system
+cd
+export KUBECONFIG=porch/deployments/local/kubeconfig
+kubectl get all -n kube-system
+ls
+kind get clusters
+kubectl get pods -A
+export KUBECONFIG=~/porch/deployments/local/kubeconfig
+kubectl get po -A
+export KUBECONFIG=~/porch/deployments/local/kubeconfig
+exit
+cd
+kubectl get po -A
+kubectl describe po kube-controller-manager-mgmt-control-plane -n kube-system
+kubectl get po -A
+kubectl get packagerev
+export KUBECONFIG=~/porch/deployments/local/kubeconfig
+ls
+cdpor
+kubectl get packagerev
+kubectl get po -A
+ls
+cd porch/
+ls
+cd deployments/
+cd local/
+ls
+sudo vim localconfig.yaml
+sudo vim kubeconfig
+~/.bash_history
+sudo ~/.bash_history
+sudo vim  ~/.bash_history
+sudo vim ~/.zsh_history
+sudo vim  ~/.bash_history
+cd
+export KUBECONFIG=~/porch/deployments/local/kubeconfig
+kubectl get po -A
+kubectl get packagerev
+clear
+cd
+ls
+cd kpt-backstage-plugins/
+yarn dev
+root@DESKTOP-CBP4K2S:~/porch#

@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# chmod +x modules.sh
-# install kind, kpt, kubectl, porch
-
 cd $HOME
 
 # Install kind
@@ -22,8 +19,22 @@ sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 # jq
 sudo apt install -y jq
 
-# Install Porch
-# This (just porch, not kpt) installs the CRDs such as PackageRepository, PackageRevision, PackageRevisionResources, etc.
-kpt pkg get https://github.com/nephio-project/catalog.git/nephio/core/porch@main porch
-kpt live init porch
-kpt live apply porch
+# install make
+sudo apt-get install make
+
+# clone porch
+git clone https://github.com/r-yabyab/porch.git
+
+#download deps
+cd porch
+make tidy
+
+# Start porch, takes like 5 minutes
+make all
+
+#then set up porchctl, could get CRDs without this
+cd porch/cmd/porchctl
+go build
+
+#add binary to PATH
+sudo mv porchctl /usr/local/bin

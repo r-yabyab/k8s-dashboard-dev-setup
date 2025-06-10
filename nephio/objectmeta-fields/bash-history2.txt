@@ -1,0 +1,260 @@
+# for the ubuntu with kpt porch, not local porch:
+
+
+user@DESKTOP-CBP4K2S:~$ sudo cat ~/.bash_history
+ls
+ls ..
+ls .. ..
+lsb_release -a
+git clone https://github.com/r-yabyab/k8s-dashboard-dev-setup.git
+ls
+cd k8s-dashboard-dev-setup/
+ls
+cd nephio/
+chmod +x script.sh
+chmod +x webui-script.sh
+chmod +x modules.sh
+./script.sh
+sudo usermod -aG docker user
+exit
+cd
+ls
+go -v
+go --v
+go
+exit
+ls
+cd
+ls
+cd kpt-backstage-plugins/
+yarn test
+exit
+go --v
+go
+cd ..
+cd
+ls /usr/local/go
+go
+go version
+go install sigs.k8s.io/kind@v0.26.0
+go install -v github.com/GoogleContainerTools/kpt@main
+kind create cluster -n mgmt
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+sudo apt install -y jq
+kpt pkg get https://github.com/nephio-project/catalog.git/nephio/core/porch@main porch
+kpt live init porch
+kpt live apply porch
+git clone https://github.com/nephio-project/kpt-backstage-plugins.git
+ls
+cd kpt-backstage-plugins/
+cd hack/
+ls
+./install-package-repositories.sh
+kubectl get packages
+kubectl get packagerevisions
+cd
+sudo bash -c 'curl -fsSL https://deb.nodesource.com/setup_22.x | bash - && apt-get install -y nodejs'
+sudo npm install --global yarn
+cd k
+cd kpt-backstage-plugins/
+sudo chown -R $USER:$USER /home/ubuntu/kpt-backstage-plugins
+cd
+sudo chown -R $USER:$USER /home/ubuntu/kpt-backstage-plugins
+sudo chown -R $USER:$USER kpt-backstage-plugins
+cd kpt-backstage-plugins/
+sudo npm install -g node-gyp
+sudo apt install build-essential -y
+yarn install
+yarn dev
+ls
+ls ..
+ls
+cd packages/
+cd backend/
+ls
+sudo vim package.json
+cd ..
+yarn install
+yarn dev
+exit
+lsb_release a
+lsb_release -a
+cd
+ls
+cd kpt-backstage-plugins/
+yarn test
+yarn dev
+exit
+kubectl get po
+kubectl get packagerevision
+kubectl get package
+kubectl get packages
+shutdown now
+exit
+kubectl get packagerev
+kubectl get packagerevisions
+kubectl get packagerevisions -o wide
+kubectl get packagerev
+kubectl get packagerev | wc -l
+kubectl get packagerevisions -o wide | wc -l
+kubectl get packagerevisionresources
+kubectl get packagerevision
+kubectl get packagerevision | tail 5
+kubectl get packagerevision | tail
+kubectl get packagerevisionresources | tail
+kubectl get packagerevisionresources | head
+kubectl get packagerevision | head
+kubectl get packagerev | head
+kubectl get packagerev -o wide | head
+kubectl get packagerevisions -o wide | head
+kubectl get packagerevisions | head
+kubectl get packagerevision --watch
+kubectl get packagerevision | wc -kl
+kubectl get packagerevision | wc -l
+kubectl get packagerevision --watch
+kubectl get packagerevision | wc -l
+kubectl get packagerevision --watch
+kubectl get repo
+kubectl get repository
+kubectl get packagerevision --watch
+exiot
+exit
+wsl
+cd
+kubectl get ns
+ls
+cd kpt-backstage-plugins/
+ls
+yarn dev
+exit
+kubectl get repository
+kubectl get packagerev
+kubectl get packagerev | wc -l
+kubectl get repository
+kubectl get ns
+kubectl get packagerev -n default
+ls
+cd
+ls
+clear
+ls
+kubectl get ns
+kubectl config get-context
+kind cluster
+kind get clusters
+exit
+cd
+ls
+kubectl get packagerevision --watch -A
+kubectl get packagerevision --watch -A | grep 'test'
+kubectl get packagerevision --watch  | grep 'test'
+kubectl get packagerevision | grep 'test'
+kubectl get packagerevision
+kubectl get packagerevision | grep 'angular'
+kubectl get repository
+kubectl get packagerevision --watch -A
+exit
+cd
+kubectl get packagerevision --watch
+kubectl get packagerevision --watch | head
+kubectl get packagerevision --watch | tail
+kubectl get packagerevision --watch
+exit
+cd
+ls
+cd kpt-backstage-plugins/
+yarn dev
+cd
+ls
+clear
+kubectl get packagerev
+kubectl get packagerevision
+cd
+kubectl get packagerevision
+kubectl get package
+kubectl get package -A
+kubectl get packages -A
+kubectl get packagevariance
+kubectl get resources
+kubectl get all
+kubectl get all -A
+kubectl api-resources
+kubectl get crds
+kubectl get repositories
+ls
+kubectl get repositories
+kubectl api-resources
+kubectl get packagerevision
+porchctl rpkg pull
+kpt rpkg pull
+kubectl get ns
+kpt pkg
+kpt pkg list
+kpt pkg get
+ls
+kubectl get package
+kubectl get repository
+kpt pkg get test-1
+kpt pkg get test-repo
+kpt pkg update test-1
+kpt pkg update test-repo
+ls
+mkdir local-repo
+cd local-repo/
+kpt pkg init
+ls
+sudo vim yaml.yaml
+ls
+sudo rm -r yaml.yaml
+ls
+sudo vim yaml-file.yaml
+sudo vim yml-file.yml
+ls
+kpt fn eval
+kpt pkg get
+kpt fn eval
+kpt fn source
+kpt fn render
+ks'
+ls
+cat package-context.yaml
+sudo vim yaml-file.yaml
+sudo vim yml-file.yml
+kpt fn eval
+kpt fn render
+cd
+ls
+cd kpt-backstage-plugins/
+yarn dev
+cd
+exit
+lsb_release a
+lsb_release b
+lsb_release
+lsb_release -a
+exit
+cd
+kubectl get packages
+kubectl get packagerev
+kubectl get po
+cd
+ls
+kubectl get po
+echo $KUBECONFIG
+ls
+exit
+cd
+ls
+cd local-repo/
+ls
+cat yaml-file.yaml
+cd ..
+ls
+exit
+echo $GITHUB_USERNAME
+echo $GITHUB_TOKEN
+cd
+kpt alpha repo get
+kubectl get repositories -A
+exit
