@@ -6,7 +6,8 @@ cd $HOME
 go install sigs.k8s.io/kind@v0.26.0
 
 # Install kpt CLI
-go install -v github.com/GoogleContainerTools/kpt@main
+# go install -v github.com/GoogleContainerTools/kpt@main
+go install github.com/kptdev/kpt@main
 kpt version
 
 
@@ -25,13 +26,6 @@ sudo apt-get install make
 # clone porch
 git clone https://github.com/r-yabyab/porch.git
 
-#download deps
-cd porch
-make tidy
-
-# Start porch, takes like 5 minutes
-make all
-
 #then set up porchctl, could get CRDs without this
 cd porch/cmd/porchctl
 go build
@@ -39,6 +33,16 @@ go build
 #add binary to PATH
 #works when porch isn't running
 sudo mv porchctl /usr/local/bin
+
+#download deps
+cd $HOME
+cd porch
+make tidy
+
+# Start porch, takes like 5 minutes
+make all
+
+
 
 
 
