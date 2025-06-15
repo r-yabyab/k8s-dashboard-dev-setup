@@ -39,3 +39,9 @@ go build
 #add binary to PATH
 #works when porch isn't running
 sudo mv porchctl /usr/local/bin
+
+
+
+
+# kubectl config get-contexts
+# kubectl config view

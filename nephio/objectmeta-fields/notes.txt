@@ -37,7 +37,31 @@ C:\Users\cayab\porch\pkg\repository\repository.go
 	UpdateLifecycle(ctx context.Context, lifecycle v1alpha1.PackageRevisionLifecycle) error
 
 Make changes to vvvv for draft updates
-C:\Users\cayab\porch\pkg\externalrepo\git\draft.go
+porch/pkg/externalrepo/git/draft.go
 
 
 ~/.bash_history
+
+===============
+
+for packagerevision .startsWith error
+kpt-backstage-plugins/plugins/cad/src/utils/packageRevision.ts
+- to fix when running porch local with webui, use below
+
+//const getRevisionNumber = (revision: string, defaultNumber: number = NaN): number => {
+//  if (revision && revision.startsWith('v')) {
+  //  if (revision) {
+   // const revisionNumber = parseInt(revision.substring(1), 10);
+//
+ //   if (Number.isInteger(revisionNumber)) {
+ //     return revisionNumber;
+ //   }
+ // }
+//
+//  return defaultNumber;
+//};
+
+function getRevisionNumber(revision: number): number {
+        return revision;
+}
+
