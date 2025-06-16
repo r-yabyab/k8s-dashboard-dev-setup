@@ -65,3 +65,15 @@ function getRevisionNumber(revision: number): number {
         return revision;
 }
 
+
+
+--------------
+/porch# sudo vim deployments/local/localconfig.yaml
+
+
+[Makefile:148: run-local]
+- problem with this when doing make all, try make run-local
+
+    docker start mgmt-control-plane
+    KUBECONFIG=/root/porch/deployments/local/kubeconfig kubectl apply --validate=false -f deployments/local/localconfig.yaml
+
