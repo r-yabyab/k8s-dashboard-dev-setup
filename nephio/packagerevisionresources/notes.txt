@@ -1,0 +1,23 @@
+To get what verbs a resources does, do either:
+    kubectl api-resources --verbs=watch,list,get | grep packagerevisionresources
+    kubectl get --raw /apis/porch.kpt.dev/v1alpha1 | jq .
+
+
+
+Files we need to change
+porch/pkg/registry/porch/packagerevisionresources.go
+porch\pkg\registry\porch\packagerevision.go
+
+apiserver and clientset packagerevisionresources.go
+
+Add these for extra context
+porch\api\generated\clientset\versioned\typed\porch\v1alpha1\packagerevisionresources.go
+porch\api\generated\clientset\versioned\typed\porch\v1alpha1\packagerevision.go
+
+porch\api\porch\doc.go
+porch\pkg\externalrepo\git\git.go
+porch\pkg\externalrepo\git\draft.go
+
+
+use @workspace to reference all files for copilot
+

@@ -46,6 +46,8 @@ go build
 sudo mv porchctl /usr/local/bin
 
 
+# Confirm if CRDs are installed
+# kubectl api-resources | grep porch
 
 # kubectl config get-contexts
 # kubectl config view
