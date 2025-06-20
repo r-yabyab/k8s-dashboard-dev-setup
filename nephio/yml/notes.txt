@@ -1,0 +1,13 @@
+for https://github.com/nephio-project/nephio/issues/355
+
+
+
+$HOME/kpt-backstage-plugins/plugins/cad/src/utils/packageRevisionResources.ts
+
+
+Comment
+
+Fixes https://github.com/nephio-project/nephio/issues/355
+Also added a check to see if the Yaml block is an object or not. The sample package 
+from https://github.com/nephio-project/nephio-example-packages/blob/main/multus/multus-daemonset-thick.yml 
+has an entire yaml block as comments with a ---, looking at the contents through webui triggers a runtime error. 

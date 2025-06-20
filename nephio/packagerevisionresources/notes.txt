@@ -7,6 +7,11 @@ To get what verbs a resources does, do either:
 Files we need to change
 porch/pkg/registry/porch/packagerevisionresources.go
 porch\pkg\registry\porch\packagerevision.go
+porch\pkg\engine\watchermanager.go
+- to be able to use this:
+    var _ rest.Watcher = &packageRevisionResources{}
+    It gives this error:
+    cannot use &packageRevisionResources{} (value of type *packageRevisionResources) as "k8s.io/apiserver/pkg/registry/rest".Watcher value in variable declaration: *packageRevisionResources does not implement "k8s.io/apiserver/pkg/registry/rest".Watcher (missing method Watch)compilerInvalidIfaceAssign
 
 apiserver and clientset packagerevisionresources.go
 
@@ -20,4 +25,6 @@ porch\pkg\externalrepo\git\draft.go
 
 
 use @workspace to reference all files for copilot
+
+- to check if #700 package updates to draft works on kpt porch as well
 
