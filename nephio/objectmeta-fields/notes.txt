@@ -61,6 +61,7 @@ kpt-backstage-plugins/plugins/cad/src/utils/packageRevision.ts
 //  return defaultNumber;
 //};
 
+# change it to this vvv
 function getRevisionNumber(revision: number): number {
         return revision;
 }

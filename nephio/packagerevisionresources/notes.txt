@@ -6,7 +6,7 @@ To get what verbs a resources does, do either:
 
 Files we need to change
 porch/pkg/registry/porch/packagerevisionresources.go
-porch\pkg\registry\porch\packagerevision.go
+porch/pkg/registry/porch/packagerevision.go
 porch\pkg\engine\watchermanager.go
 - to be able to use this:
     var _ rest.Watcher = &packageRevisionResources{}
