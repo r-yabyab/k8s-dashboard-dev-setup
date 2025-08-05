@@ -4,10 +4,14 @@ provider "aws" {
 
 resource "aws_instance" "my_instance_worker" {
   # 24.04
-  ami           = "ami-0cf2b4e024cdb6960"
+  # ami           = "ami-0cf2b4e024cdb6960"
   # 22.04
   # ami           = "ami-0606dd43116f5ed57"
   
+  # 24.04 LTS
+  ami = "ami-05f991c49d264708f"
+  
+
   # instance_type = "c5ad.2xlarge"
   # 8vCPU, 16GB RAM
   # $0.3400 per hour
@@ -24,13 +28,14 @@ resource "aws_instance" "my_instance_worker" {
   instance_type ="g4dn.xlarge"
   # 4vCPU, 16GB RAM, 1 NVIDIA T4 GPU
   # $0.526 per hour
+  # g4dn.2xlarge, 32gb, $0.752
   tags = {
     "Name" = "k8s-dashboard-dev-master"
   }
   key_name        = "kube-server"
   security_groups = ["k8s-dashboard-dev"]
   root_block_device {
-    volume_size = 50
+    volume_size = 90
 # 30 for k8s dashboard, 50 nephio
   }
 }

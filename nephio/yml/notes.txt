@@ -23,3 +23,6 @@ Also can make changes while yarn dev running
 
 $HOME/kpt-backstage-plugins/plugins/cad/src/utils/packageRevision.ts
 - look into Revision.startsWith error, only in dev env but not in prod
+
+To run local lint
+    yarn tsc:full
