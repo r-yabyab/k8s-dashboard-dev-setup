@@ -11,11 +11,13 @@ kind create cluster -n mgmt
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
-# jq
-sudo apt install -y jq
+# # jq
+# sudo apt install -y jq
 
-# install make
-sudo apt-get install make
+# # install make
+# sudo apt-get install make
+
+sudo apt-get install -y jq make
 
 # clone porch
 git clone https://github.com/r-yabyab/porch.git
