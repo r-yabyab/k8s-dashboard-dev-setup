@@ -1,0 +1,24 @@
+in WSL instance, to open vscode,
+    code .
+
+
+root@DESKTOP-CBP4K2S:~/kpt-backstage-plugins/hack# kubectl get packagerevisionresources --watch
+NAME                                                              PACKAGE                              WORKSPACENAME   REVISION   REPOSITORY                FILES
+nephio-free5gc-packages.free5gc-cp.main                           free5gc-cp                           main            -1         nephio-free5gc-packages   28
+nephio-free5gc-packages.free5gc-cp.v1      
+
+Error from server (MethodNotAllowed): watch is not supported on resources of kind "packagerevisionresources.porch.kpt.dev"
+root@DESKTOP-CBP4K2S:~/kpt-backstage-plugins/hack#
+
+
+
+W:\Users\cayab\porch\pkg\engine\watchermanager.go
+W:\Users\cayab\porch\pkg\registry\porch\watch.go
+
+
+
+
+
+https://github.com/kptdev/kpt/blob/main/site/guides/porch-user-guide.md 
+This is where I got the cmd to register my git repo with porchctl, the cmd use kpt alpha but we can just use porchctl, doesn’t need webui
+Remember that porchctl script to get it to run is done when porch isnt running, try installing porch then run it then stop then proceed with porchctl
