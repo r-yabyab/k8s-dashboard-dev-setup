@@ -12,11 +12,15 @@ go install github.com/kptdev/kpt@main
 kpt version
 
 # to try this out, crashes if porch is set up already
+git clone https://github.com/r-yabyab/porch.git
 cd porch/cmd/porchctl
 go build
 #add binary to PATH
 sudo mv porchctl /usr/local/bin
 
+
+cd porch
+sudo apt-get install -y jq make
 # see list of make builds
 make help 
 
