@@ -42,3 +42,13 @@ Fix:
 - (for draft state) editing on webui then adding configmap then confirming sends watch to packagerevisionresource
   with new file count
 - moving to next state always sends two events for both packagerevision and packagerevisionresources, maybe check if existing issue
+
+
+
+Files:
+# contains watcher for packagerevision
+    pkg\registry\porch\packagecommon.go
+pkg\registry\porch\packagerevisionresources.go
+pkg\registry\porch\packagerevision.go
+pkg\engine\watchermanager.go
+

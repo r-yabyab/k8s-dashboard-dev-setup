@@ -42,6 +42,9 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 # don't need this if in WSL
 sudo usermod -aG docker ubuntu
 
+  # if WSL and no perms, then restart
+  # sudo usermod -aG docker $USER
+
 # then reboot
 
 

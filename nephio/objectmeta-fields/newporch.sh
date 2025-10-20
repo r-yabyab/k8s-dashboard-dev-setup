@@ -5,10 +5,11 @@
 # about 8gb vol to set up kind, porch, kpt-backstage dev env
 
 #create porch-test kind cluster
+go install sigs.k8s.io/kind@v0.26.0
 kind create cluster -n porch-test
 
 # install kpt
-go install github.com/kptdev/kpt@main
+go install github.com/kptdev/kpt@main   # crashes WSL instance if out of volume
 kpt version
 
 # to try this out, crashes if porch is set up already
