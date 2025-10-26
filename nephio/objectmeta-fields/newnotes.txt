@@ -52,3 +52,26 @@ pkg\registry\porch\packagerevisionresources.go
 pkg\registry\porch\packagerevision.go
 pkg\engine\watchermanager.go
 
+
+
+-------------------
+# cloning, package lifecycle
+kpt-samples.ingress-nginx.main
+
+
+porchctl rpkg clone kpt-samples.ingress-nginx.main nginx-clone \
+  --repository=test4 -ndefault
+  --namespace=default
+
+porchctl rpkg pull \
+  test4.nginx-clone.v1 ./changes -ndefault
+
+porchctl rpkg push \
+  test4.nginx-clone.v1 ./changes -ndefault
+
+porchctl rpkg propose -ndefault test4.nginx-clone.v1
+
+porchctl rpkg propose-delete -ndefault test4.nginx-clone.v1
+
+
+porchctl rpkg get -ndefault test4.nginx-clone.v1

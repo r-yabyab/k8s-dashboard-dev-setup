@@ -16,7 +16,7 @@ resource "aws_instance" "my_instance_worker" {
   # 8vCPU, 16GB RAM
   # $0.3400 per hour
 
-  # instance_type = "t3.large"
+  instance_type = "t3.large"
   # 2vCPU, 8GB RAM
   # $0.0836 per hour
 
@@ -25,7 +25,8 @@ resource "aws_instance" "my_instance_worker" {
   # 8vCPU, 32GB RAM
   # $0.3852 per hour
 
-  instance_type ="g4dn.xlarge"
+    # for ml
+  # instance_type ="g4dn.xlarge"
   # 4vCPU, 16GB RAM, 1 NVIDIA T4 GPU
   # $0.526 per hour
   # g4dn.2xlarge, 32gb, $0.752
@@ -35,8 +36,8 @@ resource "aws_instance" "my_instance_worker" {
   key_name        = "kube-server"
   security_groups = ["k8s-dashboard-dev"]
   root_block_device {
-    volume_size = 90
-# 30 for k8s dashboard, 50 nephio
+    volume_size = 60
+# 30 for k8s dashboard, 50 nephio, 90 for ml
   }
 }
 
