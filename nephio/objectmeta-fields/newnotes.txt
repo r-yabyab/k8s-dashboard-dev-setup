@@ -75,3 +75,9 @@ porchctl rpkg propose-delete -ndefault test4.nginx-clone.v1
 
 
 porchctl rpkg get -ndefault test4.nginx-clone.v1
+
+
+
+-----
+extra notes:
+no e2e tests for watch events, only unit

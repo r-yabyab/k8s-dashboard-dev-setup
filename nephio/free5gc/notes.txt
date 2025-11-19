@@ -1,0 +1,4 @@
+https://docs.nephio.org/docs/guides/install-guides/
+--> https://docs.nephio.org/docs/guides/user-guides/usecase-user-guides/exercise-1-free5gc/
+
+https://github.com/nephio-project/nephio/issues/966
