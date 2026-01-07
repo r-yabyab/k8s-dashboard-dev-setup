@@ -7,7 +7,8 @@ cd $HOME
 # https://docs.nephio.org/docs/guides/install-guides/web-ui/
 
 # pull kpt package
-kpt pkg get --for-deployment https://github.com/nephio-project/nephio-packages.git/nephio-webui@@origin/v3.0.0
+# kpt pkg get --for-deployment https://github.com/nephio-project/nephio-packages.git/nephio-webui@@origin/v3.0.0
+kpt pkg get --for-deployment https://github.com/nephio-project/nephio-packages.git/nephio-webui@@origin/main
 
 kpt fn render nephio-webui
 kpt live init nephio-webui
@@ -21,3 +22,8 @@ kubectl port-forward -n nephio-webui svc/nephio-webui 7007:7007
 
 # opens if reverse proxied through nginx with port forward, but gets 503 error service unavailable
 # ... no data is available
+
+# port forward 7007 then change nginx default
+sudo apt install nginx -y
+
+sudo vim /etc/nginx/sites-available/default

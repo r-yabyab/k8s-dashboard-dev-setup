@@ -33,6 +33,9 @@ make help
 # setup api-server and porch
 make run-in-kind
 
+# testing, first time make test gives perms issues then exits, 2nd run works
+make test
+
 # for example packages
 git clone https://github.com/nephio-project/kpt-backstage-plugins.git
 

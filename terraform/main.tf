@@ -11,14 +11,14 @@ resource "aws_instance" "my_instance_worker" {
   # 24.04 LTS
   ami = "ami-05f991c49d264708f"
   
+    # use for nephio
+  instance_type = "t3.large"
+  # 2vCPU, 8GB RAM
+  # $0.0836 per hour
 
   # instance_type = "c5ad.2xlarge"
   # 8vCPU, 16GB RAM
   # $0.3400 per hour
-
-  instance_type = "t3.large"
-  # 2vCPU, 8GB RAM
-  # $0.0836 per hour
 
   #this one doesn't have nvidia gpu
   # instance_type = "t2.2xlarge"
@@ -36,7 +36,8 @@ resource "aws_instance" "my_instance_worker" {
   key_name        = "kube-server"
   security_groups = ["k8s-dashboard-dev"]
   root_block_device {
-    volume_size = 60
+    volume_size = 200
+    # volume_size = 60
 # 30 for k8s dashboard, 50 nephio, 90 for ml
   }
 }
